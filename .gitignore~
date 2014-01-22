@@ -1,7 +1,0 @@
-*.log
-*.pot
-*.pyc
-*~ 
-psc/media
-settings.py
-local_settings.py
