@@ -1,0 +1,20 @@
+{% load flatpages %}
+{% get_flatpages as flatpages %}
+		<div id="my-navbar" class="line">
+			<nav id="navigation" role="navigation">
+				<ul class="pas">
+					<li class="pas inbl"><a href="{% url "blog:index" %}">  index</a></li>
+		  			<li class="pas inbl"><a href="{% url "blog:tagged" slug="music" %}">  music</a></li>
+		    		{% for page in flatpages %}
+        			<li class="pas inbl"><a href="{{ page.url }}"> {{ page.title }}</a></li>
+    				{% endfor %}
+				{% for tag in tags %}
+				<li class="pas inbl"><a href="{% url 'blog:tagged' tag.slug %}">{{ tag.name }}</a></li>
+    				{% endfor %}
+		    		
+	    		</ul>
+    		</nav>
+			<p class="my-description">This is the home page of the Pizza Suicide Club, where we post fresh work every day from our beautiful exploited slave artists.</p>
+		</div>
+		
+		

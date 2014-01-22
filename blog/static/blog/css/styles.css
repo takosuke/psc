@@ -1,0 +1,14 @@
+/* custom styles prepended by my- */
+
+.content {
+	background-color:green;
+	border:1px black solid;
+	}
+	
+#my-navbar {
+	background-color:blue;	
+}
+
+#my-navbar li {
+	list-style-type:none;
+}

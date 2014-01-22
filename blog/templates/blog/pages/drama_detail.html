@@ -1,0 +1,30 @@
+{% extends "blog/generic_base.html" %}
+{% load staticfiles %}
+
+	{% block css %}
+		<link rel="stylesheet" href="{% static "blog/css/main.css" %}" type="text/css">
+	{% endblock %}
+	
+	{% block navigation %}
+		{% include "blog/main/main_nav.html" %}
+	{% endblock %}
+	
+	{% block content %}
+		{% if post %}
+		<div id="drama">
+			<div >
+				<h1>{{ post.title }}</h1>
+				<br>
+				<img src="{{ MEDIA_URL }}{{ post.cover }}">
+				<br>
+				{{ post.text }}
+				<br>
+				<hr>
+				{{ post.date }}		
+			</div>
+		</div>
+		{% endif %}
+	{% endblock %}
+	</body>
+</html>
+
