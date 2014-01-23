@@ -4,13 +4,12 @@
 			<nav id="navigation" role="navigation">
 				<ul class="pas">
 					<li class="pas inbl"><a href="{% url "blog:index" %}">  index</a></li>
-		  			<li class="pas inbl"><a href="{% url "blog:tagged" slug="music" %}">  music</a></li>
 		    		{% for page in flatpages %}
         			<li class="pas inbl"><a href="{{ page.url }}"> {{ page.title }}</a></li>
     				{% endfor %}
-				{% for tag in tags %}
-				<li class="pas inbl"><a href="{% url 'blog:tagged' tag.slug %}">{{ tag.name }}</a></li>
-    				{% endfor %}
+				{% for tag in alltags %}
+				<li class="pas inbl"><a href="{% url 'blog:tagged'  tag.slug  %}"> {{ tag.name }}</a></li>
+				{% endfor %}
 		    		
 	    		</ul>
     		</nav>
