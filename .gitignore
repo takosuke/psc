@@ -2,10 +2,10 @@
 *.pot
 *.pyc
 *.db
+*~
 /*~
 *.swp
 .DS_Store
-*~ 
 psc/media
 settings.py
 
