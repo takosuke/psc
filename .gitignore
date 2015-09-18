@@ -8,6 +8,5 @@
 .DS_Store
 psc/media
 psc/db
-settings.py
+settings_local.py
 
-local_settings.py
