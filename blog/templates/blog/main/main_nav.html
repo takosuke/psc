@@ -1,19 +1,20 @@
 {% load flatpages %}
 {% get_flatpages as flatpages %}
-		<div id="my-navbar" class="line">
-			<nav id="navigation" role="navigation">
-				<ul class="pa0 h3-like">
-				<li class="pa0 prs inbl"><a href="{% url "blog:index" %}">  index</a></li>
-		    		{% for page in flatpages %}
-        			<li class="pa0 prs inbl"><a href="{{ page.url }}"> {{ page.title }}</a></li>
-    				{% endfor %}
-				{% for tag in alltags %}
-				<li class="pa0 prs inbl"><a href="{% url 'blog:tagged'  tag.slug  %}"> {{ tag.name }}</a></li>
-				{% endfor %}
-		    		
-	    		</ul>
-    		</nav>
-			<p class="my-description"><a href="http://records.pizzasuicideclub.com">Pizza Suicide Records</a>|| </p>
-		</div>
-		
-		
+        <div id="my-navbar" class="line">
+            <nav id="navigation" role="navigation">
+                <ul class="pa0 h3-like">
+                <li class="pa0 prs inbl"><a href="{% url "blog:index" %}">  index</a></li>
+                    {% for page in flatpages %}
+                        <li class="pa0 prs inbl"><a href="{{ page.url }}"> {{ page.title }}</a></li>
+                    {% endfor %}
+<!--
+            {% for tag in alltags %}
+                <li class="pa0 prs inbl"><a href="{% url 'blog:tagged'  tag.slug  %}"> {{ tag.name }}</a></li>
+            {% endfor %}
+-->
+                    
+                </ul>
+            </nav>
+        </div>
+        
+        
