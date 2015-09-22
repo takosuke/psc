@@ -25,7 +25,9 @@
                         {% endif %}
                         <p class="my-text">
                          {{ post.text|oembed:"960x540"|urlize|linebreaks }} </p>
-                        <p class="my-tags">TAGS:<br>{% for tag in post.tags.all %}<a href="{% url 'blog:tagged' tag.slug %}">{{ tag.name }}   </a>{% endfor %}</p>
+                        {% if post.tags.all %}
+                            <p class="my-tags">TAGS:<br>{% for tag in post.tags.all %}<a href="{% url 'blog:tagged' tag.slug %}">{{ tag.name }}   </a>{% endfor %}</p>
+                        {% endif %}
                         <p class="my-date">{{ post.date }}</p>
                     </div>
                 </div>
