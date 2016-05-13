@@ -1,0 +1,4 @@
+---
+
+- name: create supervisor program config
+  template: src=templates/supervisor.ini dest=/etc/supervisor/{{ app_name }}.ini

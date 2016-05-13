@@ -1,0 +1,10 @@
+---
+
+- name: ensure nginx log directory exists
+  file: dest={{ webapps_dir }}/{{ app_name }}/log/nginx state=directory owner="{{ deploy_user }}"
+
+- name: ensure uwsgi log directory exists
+  file: dest={{ webapps_dir }}/{{ app_name }}/log/uwsgi state=directory owner="{{ deploy_user }}"
+
+- name: ensure supervisor log directory exists
+  file: dest={{ webapps_dir }}/{{ app_name }}/log/supervisor state=directory owner="{{ deploy_user }}"

@@ -1,0 +1,29 @@
+---
+
+- name: create supervisord config folder
+  file: path=/etc/supervisor state=directory
+  become: true
+  become_method: sudo
+
+- name: create supervisord config
+  copy: src=files/supervisord.conf 
+        dest=/etc/supervisord.conf
+        owner=root
+        group=root
+  become: true
+  become_method: sudo
+
+- name: create supervisord init script
+  copy: src=templates/supervisord.sh 
+        dest=/etc/init.d/supervisord 
+        mode=0755
+        owner=root
+        group=root
+  become: true
+  become_method: sudo
+
+- name: start supervisord service and have it run during system startup
+  service: name=supervisord state=started enabled=yes
+  become: true
+  become_method: sudo
+  

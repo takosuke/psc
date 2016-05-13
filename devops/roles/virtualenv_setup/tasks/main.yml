@@ -1,0 +1,8 @@
+---
+
+- name: Make virtualenv
+  shell: . /usr/local/bin/virtualenvwrapper.sh && mkvirtualenv {{ app_name }}
+  args:
+    executable: /bin/bash
+#    creates: "{{ venvabs }}"
+    

@@ -1,0 +1,5 @@
+---
+
+- name: Install app requirements
+  pip:  requirements={{ webapps_dir }}/{{ app_name }}/{{ app_root }}/requirements.txt
+        virtualenv=/home/{{ deploy_user }}/.virtualenvs/{{ app_name }}    

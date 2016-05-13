@@ -1,0 +1,6 @@
+---
+
+- name: update app repo
+  git: repo=https://github.com/{{ repo_path }} dest={{ webapps_dir }}/{{ app_name }} 
+  notify: restart pm2 app
+
