@@ -2,4 +2,5 @@
 
 - name: Install app requirements
   pip:  requirements={{ webapps_dir }}/{{ app_name }}/html/requirements.txt
-        virtualenv=/home/{{ deploy_user }}/.virtualenvs/{{ app_name }}    
+        virtualenv=/home/{{ deploy_user }}/.virtualenvs/{{ app_name }}
+        extra_args='--allow-external --allow-unverified'

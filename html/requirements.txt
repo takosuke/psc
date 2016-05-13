@@ -1,5 +1,5 @@
 Django
-PIL --allow-external --allow-unverified
+PIL
 Pillow
 argparse
 django-oembed
