@@ -14,7 +14,7 @@
   become_method: sudo
 
 - name: create supervisord init script
-  copy: src=templates/supervisord.sh 
+  copy: src=files/supervisord.sh 
         dest=/etc/init.d/supervisord 
         mode=0755
         owner=root
