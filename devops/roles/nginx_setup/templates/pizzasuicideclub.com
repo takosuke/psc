@@ -1,12 +1,12 @@
 server {
     listen   80;
-    server_name {{ domain_name }};
+    server_name test.{{ domain_name }};
     return 301 http://www.{{ domain_name }}$request_uri;
     }
 
 server {
     listen       80;
-    server_name  www.{{ domain_name }};
+    server_name  test.{{ domain_name }};
     root {{ webapps_dir }}/{{ app_name }}/html;
     access_log {{ webapps_dir}}/{{ app_name }}/log/nginx/{{ domain_name }}.access.log;
     error_log {{ webapps_dir}}/{{ app_name }}/log/nginx/{{ domain_name }}.error.log info;

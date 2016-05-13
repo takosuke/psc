@@ -1,5 +1,4 @@
 Django
-PIL
 Pillow
 argparse
 django-oembed
