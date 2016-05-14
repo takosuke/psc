@@ -1,5 +1,11 @@
 ---
 
+- name: Install Pillow prerequisites
+  apt: name={{ item }}
+  with_items:
+    - build-dep
+    - python-imaging
+
 - name: Install app requirements
   pip:  requirements={{ webapps_dir }}/{{ app_name }}/html/requirements.txt
         virtualenv=/home/{{ deploy_user }}/.virtualenvs/{{ app_name }}

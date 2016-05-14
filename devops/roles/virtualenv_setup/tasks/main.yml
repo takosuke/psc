@@ -1,5 +1,9 @@
 ---
 
+- name: Add virtualenvwrapper script to .zshrc_local
+  lineinfile: dest=/home/{{ deploy_user }}/.zshrc_local 
+              line=". /usr/local/bin/virtualenvwrapper.sh"
+
 - name: Make virtualenv
   shell: . /usr/local/bin/virtualenvwrapper.sh && mkvirtualenv {{ app_name }}
   args:
