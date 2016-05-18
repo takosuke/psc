@@ -1,10 +1,12 @@
+from __future__ import unicode_literals
+
 from django.db import models
 from django.utils import timezone
 from django.template.defaultfilters import slugify
 import datetime
 from easy_thumbnails.fields import ThumbnailerImageField
-from taggit.managers import TaggableManager
-from taggit.models import Tag
+#from taggit.managers import TaggableManager
+#from taggit.models import Tag
 
 class Post(models.Model):
     title = models.CharField(max_length = 150)
@@ -19,13 +21,13 @@ class Post(models.Model):
         self.slug = slugify(self.title)
         super(Post, self).save()
 
-    def tag_helptext():
-        help_text = "Options: "
-        for t in Tag.objects.all():
-            help_text += t.name + " ||| "
-        return help_text
-    tags = TaggableManager(blank=True, help_text = tag_helptext())
-    image  = ThumbnailerImageField(upload_to = 'cover', blank=True)
+#    def tag_helptext():
+#        help_text = "Options: "
+#        for t in Tag.objects.all():
+#            help_text += t.name + " ||| "
+#        return help_text
+#    tags = TaggableManager(blank=True, help_text = tag_helptext())
+    image  = ThumbnailerImageField(upload_to = 'cover', blank=True, null=True)
     def __unicode__(self):
         return self.title
     def title_contains_penis(self):

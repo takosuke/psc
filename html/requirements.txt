@@ -1,9 +1,0 @@
-Django
-Pillow
-argparse
-django-oembed
-django-taggit
-easy-thumbnails
-six
-wsgiref
-yolk

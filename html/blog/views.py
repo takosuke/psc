@@ -1,11 +1,9 @@
-from django.http import HttpResponse, HttpResponseRedirect
-from django.core.urlresolvers import reverse
+from django.shortcuts import render
 from django.views import generic
-from django.shortcuts import render, get_object_or_404
-from django.db.models import Count
 
 from blog.models import Post
-from taggit.models import Tag
+#from taggit.models import Tag
+# Create your views here.
 
 class IndexView(generic.ListView):
     context_object_name = 'latest'
@@ -14,18 +12,7 @@ class IndexView(generic.ListView):
     queryset = Post.objects.all().order_by('-date')
     def get_context_data(self, **kwargs):
         context = super(IndexView, self).get_context_data(**kwargs)
-        context['alltags'] = Tag.objects.annotate(num_tags=Count('post')).order_by('-num_tags')[:12]
-        return context
-
-
-class TaggedIndexView(generic.ListView):
-    template_name = "blog/main/index.html"
-    context_object_name = 'latest'
-    def get_queryset(self):
-        return Post.objects.filter(tags__slug=self.kwargs.get('slug')).order_by('-date')
-    def get_context_data(self, **kwargs):
-        context = super(TaggedIndexView, self).get_context_data(**kwargs)
-        context['alltags'] = Tag.objects.annotate(num_tags=Count('post')).order_by('-num_tags')[:12]
+#        context['alltags'] = Tag.objects.annotate(num_tags=Count('post')).order_by('-num_tags')[:12]
         return context
 
 class DetailView(generic.DetailView):
@@ -33,7 +20,7 @@ class DetailView(generic.DetailView):
     template_name = "blog/main/detail.html" 
     def get_context_data(self, **kwargs):
         context = super(DetailView, self).get_context_data(**kwargs)
-        context['alltags'] = Tag.objects.annotate(num_tags=Count('post')).order_by('-num_tags')[:12]
+#        context['alltags'] = Tag.objects.annotate(num_tags=Count('post')).order_by('-num_tags')[:12]
         return context
         
 class PageIndexView(generic.ListView):
@@ -41,7 +28,7 @@ class PageIndexView(generic.ListView):
     def get_context_data(self, **kwargs):
         context = super(PageIndexView, self).get_context_data(**kwargs)
         context["page"] = self.kwargs.get('slug')
-        context['alltags'] = Tag.objects.annotate(num_tags=Count('post')).order_by('-num_tags')[:12]
+#        context['alltags'] = Tag.objects.annotate(num_tags=Count('post')).order_by('-num_tags')[:12]
         return context
     def get_template_names(self):
         return 'blog/pages/' + self.kwargs.get('slug') + '.html'
@@ -54,6 +41,5 @@ class PageDetail(generic.DetailView):
         return 'blog/pages/' + self.kwargs.get('slug') + '_detail.html'
     def get_context_data(self, **kwargs):
         context = super(PageDetail, self).get_context_data(**kwargs)
-        context['alltags'] = Tag.objects.annotate(num_tags=Count('post')).order_by('-num_tags')[:12]
+#        context['alltags'] = Tag.objects.annotate(num_tags=Count('post')).order_by('-num_tags')[:12]
         return context
-
