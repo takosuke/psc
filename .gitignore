@@ -9,4 +9,4 @@
 psc/media
 psc/db
 settings_local.py
-psc/static/bower_components
+html/psc/static/bower_components
