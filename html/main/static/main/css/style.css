@@ -1,0 +1,19 @@
+.container {
+  max-width: 1280px;
+  margin:0px;
+}
+.row {
+  max-width: 1280px;
+}
+
+.container-main {
+  border: 1px black solid;
+}
+
+.navigation-menu {
+  border: 1px black solid;
+}
+
+.headlines {
+  border: 1px black solid;
+}

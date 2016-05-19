@@ -4,7 +4,7 @@
     {% block css %}
         <link rel="stylesheet" href="{% static "common/Skeleton-2.0.4/css/normalize.css" %}" media="all">
         <link rel="stylesheet" href="{% static "common/Skeleton-2.0.4/css/skeleton.css" %}" media="all">
-        <link rel="stylesheet" href="{% static "main/css/main.css" %}" media="all">
+        <link rel="stylesheet" href="{% static "main/css/style.css" %}" media="all">
     {% endblock %}
 
     {% block scripts %}
@@ -21,7 +21,8 @@
     {% endblock %}
 
     {% block main %}
-    <div id="main" role="main" class="row">
+    <div id="main" role="main" class="" style="border: 10px black solid;">
+        o
         {% block content %}
         {% endblock %}
     </div>

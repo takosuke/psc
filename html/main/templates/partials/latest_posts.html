@@ -1,9 +1,0 @@
-{% block latest_posts %}
-  {% for post in latest_posts %}
-      {% if post.slug %}
-          <a href="{% url 'blog:detail' post.slug %}">{{ post.title }}</a>
-      {% else %}
-          <a href="{% url 'blog:detail' post.id %}">{{ post.title }}</a>
-      {% endif %}
-  {% endfor %}
-{% endfor %}

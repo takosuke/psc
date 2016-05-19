@@ -1,8 +1,8 @@
 {% extends "main/main_base.html" %}
 {% block main %}
-<div class="container"
+<div class="container container-main">
     <div class="row">
-        <div class="three columns">
+        <div class="three columns navigation-menu">
             <ul>
                 <li>
                     <a href="http://www.tv.pizzasuicideclub.com/">Pizza Suicide Tv</a>
@@ -12,7 +12,8 @@
                 </li>
             </ul>
         </div>
-        <div class="nine columns">
+        <div class="three columns headlines">
+            {% include "main/partials/latest_posts.html" %}
         </div>
     </div>
 </div>
