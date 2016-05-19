@@ -1,0 +1,32 @@
+{% extends "blog/generic_base.html" %}
+{% load staticfiles %}
+
+    {% block css %}
+        <link rel="stylesheet" href="{% static "common/Skeleton-2.0.4/css/normalize.css" %}" media="all">
+        <link rel="stylesheet" href="{% static "common/Skeleton-2.0.4/css/skeleton.css" %}" media="all">
+        <link rel="stylesheet" href="{% static "main/css/main.css" %}" media="all">
+    {% endblock %}
+
+    {% block scripts %}
+        <!--[if lt IE 9]>
+        <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+    {% endblock %}
+
+    {% block header %}
+        {% include "common/partials/header.html" %}
+    {% endblock %}
+    
+    {% block navigation %}
+    {% endblock %}
+
+    {% block main %}
+    <div id="main" role="main" class="row">
+        {% block content %}
+        {% endblock %}
+    </div>
+    {% endblock %}
+
+    {% block footer %}
+    {% endblock %}
+
