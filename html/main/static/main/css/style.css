@@ -1,19 +1,14 @@
+body {
+  background-image: url('/static/common/img/pizza01.jpg');
+}
 .container {
   max-width: 1280px;
   margin:0px;
 }
-.row {
-  max-width: 1280px;
-}
 
-.container-main {
-  border: 1px black solid;
+.nav-menu {
+  background-image: url('/static/common/img/pizza01.gif');
 }
-
-.navigation-menu {
-  border: 1px black solid;
-}
-
-.headlines {
-  border: 1px black solid;
+a {
+  background-color:white;
 }

@@ -1,9 +1,9 @@
-{% extends "blog/generic_base.html" %}
+{% extends "common/generic_base.html" %}
 {% load staticfiles %}
 
     {% block css %}
-        <link rel="stylesheet" href="{% static "common/Skeleton-2.0.4/css/normalize.css" %}" media="all">
-        <link rel="stylesheet" href="{% static "common/Skeleton-2.0.4/css/skeleton.css" %}" media="all">
+        <link rel="stylesheet" href="{% static "bower_components/milligram/dist/milligram.min.css" %}" media="all">
+        <link rel="stylesheet" href="{% static "bower_components/normalize.css/" %}" media="all">
         <link rel="stylesheet" href="{% static "main/css/style.css" %}" media="all">
     {% endblock %}
 
@@ -12,20 +12,26 @@
         <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
         <![endif]-->
     {% endblock %}
+    {% block pagescripts %}
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.6";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+    {% endblock %}
 
     {% block header %}
-        {% include "common/partials/header.html" %}
     {% endblock %}
     
     {% block navigation %}
     {% endblock %}
 
     {% block main %}
-    <div id="main" role="main" class="" style="border: 10px black solid;">
-        o
         {% block content %}
         {% endblock %}
-    </div>
     {% endblock %}
 
     {% block footer %}

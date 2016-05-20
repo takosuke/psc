@@ -2,7 +2,8 @@
   "name": "pizzasuicideclub",
   "version": "0.0.3",
   "dependencies": {
-    "jquery": "latest"
+    "jquery": "latest",
+    "milligram": "latest"
   },
   "homepage": "http://www.pizzasuicideclub.com",
   "authors": [

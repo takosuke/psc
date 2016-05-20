@@ -1,8 +1,8 @@
 {% extends "main/main_base.html" %}
 {% block main %}
-<div class="container container-main">
+<div class="container">
     <div class="row">
-        <div class="three columns navigation-menu">
+        <div class="column nav-menu">
             <ul>
                 <li>
                     <a href="http://www.tv.pizzasuicideclub.com/">Pizza Suicide Tv</a>
@@ -10,10 +10,30 @@
                 <li>
                     <a href="">Pizza Suicide Club Blog</a>
                 </li>
+                <li>
+                <script>
+                    window.twttr=function(t,e,r){
+                    var n,i=t.getElementsByTagName(e)[0],w=window.twttr||{};
+                    return t.getElementById(r)?w:(n=t.createElement(e),n.id=r,n.src="https://platform.twitter.com/widgets.js",i.parentNode.insertBefore(n,i),w._e=[],w.ready=function(t){w._e.push(t)},w)}(document,"script","twitter-wjs")
+                </script>
+                <a href="https://www.periscope.tv/pizasuicideclub" class="periscope-on-air" data-size="large">
+                    @PizaSuicideClub
+                </a>
+                </li>
             </ul>
         </div>
-        <div class="three columns headlines">
+        <div class="column">
+            <h2>
+                Headlines
+            </h2>
             {% include "main/partials/latest_posts.html" %}
+        </div>
+        <div class="column">
+            <div class="fb-page" 
+                  data-tabs="timeline,events"
+                  data-href="https://www.facebook.com/pizzasuidiceclub/"
+                  data-hide-cover="false">
+            </div>
         </div>
     </div>
 </div>
