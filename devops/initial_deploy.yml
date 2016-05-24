@@ -10,7 +10,7 @@
   - repo_version: master
   - webapps_dir: "/home/takosuke/public_html"
   - app_root: "html/psc"
-  - static_root: "html/static"
+  - static_root: "static"
   - media_root: "html/psc/media/uploads"  
   - wsgi_callable: application
 

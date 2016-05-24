@@ -1,3 +1,4 @@
 Django
 Pillow
 easy-thumbnails
+django-oembed
